@@ -7,26 +7,27 @@
 <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
+<div class="app-container">
 <div id="app">
   <h1>To-do-Liste von Alexandru Sonic</h1>
   <input v-model="newTask" @keyup.enter="addTask" placeholder="Neue Aufgabe hinzufügen">
   <button @click="addTask">Add Task</button>      
   <h2>Alle Aufgaben</h2>
-  <ul>
-    <li v-for="(task, index) in tasks" :key="index" :class="{ completed: task.completed }">
+  <ul
+     v-for="(task, index) in tasks" :key="index" :class="{ completed: task.completed }">
       <div class="task">
         <div class="task-content">{{ task.text }}</div>
         <div class="task-actions">
-            <button @click="toggleCompleted(task)">✔️</button>
+            <button @click="toggleCompleted(task)" :class="{ 'button-completed': task.completed }">✔️</button>
             <button @click="removeTask(index)">❌</button>
         </div>
     </div>  
-    </li>
+    
   </ul>
   <div>
     <h2>Erledigte Aufgaben</h2>
     <ul>
-      <li v-for="task in completedTasks" :key="task.id" class="completed">
+      <li v-for="task in completedTasks" :key="task.id" >
         {{ task.text }}
       </li>
     </ul>
@@ -43,5 +44,6 @@
 
 <script src="https://unpkg.com/vue@3"></script>
 <script src="src/task.js"></script>
+</div>
 </body>
 </html>

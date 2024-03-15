@@ -1,3 +1,11 @@
+.app-container {
+    width: 70%; /* Lățimea containerului este setată la 70% din lățimea viewport-ului */
+    margin-left: auto; /* Centrează containerul orizontal */
+    margin-right: auto; /* Centrează containerul orizontal */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* O mică umbră pentru estetică, opțional */
+  }
+  
+
 .task {
     display: flex;
     align-items: center; 
@@ -28,7 +36,7 @@
     margin-right: 10px; /* Oferă un spațiu între text și butoane */
 }
 
-  .completed {
+.completed {
     text-decoration: line-through;
     color: grey;
   }
