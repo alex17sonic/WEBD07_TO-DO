@@ -1,0 +1,41 @@
+.task {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    
+  }
+  
+  .task:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .task span {
+    font-weight: bold;
+  }
+  
+  .task button {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .task-content {
+    flex-grow: 1; /* Asigură că secțiunea de conținut ocupă majoritatea spațiului disponibil */
+    margin-right: 10px; /* Oferă un spațiu între text și butoane */
+}
+
+  .completed {
+    text-decoration: line-through;
+    color: grey;
+  }
+  
+  .button-completed {
+    background-color: lightgreen;
+  }
+  
+  
+  

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vue.js To-do App</title>
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<div id="app">
+  <h1>To-do-Liste von Alexandru Sonic</h1>
+  <input v-model="newTask" @keyup.enter="addTask" placeholder="Neue Aufgabe hinzufügen">
+  <button @click="addTask">Add Task</button>      
+  <h2>Alle Aufgaben</h2>
+  <ul>
+    <li v-for="(task, index) in tasks" :key="index" :class="{ completed: task.completed }">
+      <div class="task">
+        <div class="task-content">{{ task.text }}</div>
+        <div class="task-actions">
+            <button @click="toggleCompleted(task)">✔️</button>
+            <button @click="removeTask(index)">❌</button>
+        </div>
+    </div>  
+    </li>
+  </ul>
+  <div>
+    <h2>Erledigte Aufgaben</h2>
+    <ul>
+      <li v-for="task in completedTasks" :key="task.id" class="completed">
+        {{ task.text }}
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h2>Nicht erledigte Aufgaben</h2>
+    <ul>
+      <li v-for="task in notCompletedTasks" :key="task.id">
+        {{ task.text }}
+      </li>
+    </ul>
+  </div> 
+</div>
+
+<script src="https://unpkg.com/vue@3"></script>
+<script src="src/task.js"></script>
+</body>
+</html>
