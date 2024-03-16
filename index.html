@@ -10,11 +10,12 @@
 <div class="app-container">
 <div id="app">
   <h1>To-do-Liste von Alexandru Sonic</h1>
+  <div class="input-group">
   <input v-model="newTask" @keyup.enter="addTask" placeholder="Neue Aufgabe hinzufügen">
-  <button @click="addTask">Add Task</button>      
+  <button @click="addTask">Add Task</button>   
+  </div>   
   <h2>Alle Aufgaben</h2>
-  <ul
-     v-for="(task, index) in tasks" :key="index" :class="{ completed: task.completed }">
+  <ul v-for="(task, index) in tasks" :key="index" :class="{ completed: task.completed }">
       <div class="task">
         <div class="task-content">{{ task.text }}</div>
         <div class="task-actions">
@@ -22,22 +23,21 @@
             <button @click="removeTask(index)">❌</button>
         </div>
     </div>  
-    
   </ul>
   <div>
-    <h2>Erledigte Aufgaben</h2>
-    <ul>
-      <li v-for="task in completedTasks" :key="task.id" >
-        {{ task.text }}
-      </li>
+    <h2>Erledigte Aufgaben({{ completedTasks.length }})</h2>
+    <ul v-for="task in completedTasks" :key="task.id" >
+      <div class="task1">
+      {{ task.text }}
+      </div>
     </ul>
   </div>
   <div>
-    <h2>Nicht erledigte Aufgaben</h2>
-    <ul>
-      <li v-for="task in notCompletedTasks" :key="task.id">
-        {{ task.text }}
-      </li>
+    <h2>Nicht erledigte Aufgaben ({{ notCompletedTasks.length }})</h2>
+    <ul v-for="task in notCompletedTasks" :key="task.id">
+      <div class="task2"> 
+      {{ task.text }}      
+      </div>
     </ul>
   </div> 
 </div>

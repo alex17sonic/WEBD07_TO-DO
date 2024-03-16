@@ -45,5 +45,39 @@
     background-color: lightgreen;
   }
   
-  
-  
+  .task1 {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: lightgreen;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    
+  }
+  .task2 {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgb(174, 70, 70) ;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    
+  }
+  h1, h2 {
+    text-align: center;
+  }
+
+  .input-group {
+    display: flex;
+    justify-content: center; /* Alinează orizontal elementele din interior */
+    width: 100%; /* Se asigură că grupul de input folosește întreaga lățime */
+    gap: 10px; /* Adaugă un spațiu între input și buton */
+}
